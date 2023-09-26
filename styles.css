@@ -10,13 +10,15 @@ body{
 }
 
 .intro {
-    width: 480px; /* Set the width of the div */
+    width: 100%; /* Set the width of the div */
+    max-width: 480px;
     padding: 5px; /* Add some padding */
     word-wrap: break-word;
 }
 
 .frog-gif {
-    width: 75px;
+    width: 100%;
+    max-width: 75px;
     height: auto;
 }
 
