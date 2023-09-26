@@ -28,6 +28,7 @@ p + ul {
 
 @media (max-width: 480px) {
     body {
-        overflow:auto;
+        overflow: auto;
+        margin-bottom: 5%;
     }
   }
