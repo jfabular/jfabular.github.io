@@ -1,0 +1,25 @@
+body{
+    background-color: #FFFFF6;
+    color: #3F300B;
+    margin-top: 2.5%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;  /* 100% of the viewport height */
+    overflow: hidden;
+}
+
+.intro {
+    width: 480px; /* Set the width of the div */
+    padding: 5px; /* Add some padding */
+    word-wrap: break-word;
+}
+
+.frog-gif {
+    width: 75px;
+    height: auto;
+}
+
+p + ul {
+    margin-top: -10px;
+}
