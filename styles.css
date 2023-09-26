@@ -26,9 +26,16 @@ p + ul {
     margin-top: -10px;
 }
 
+@media (max-width: 768px) {
+    body {
+        overflow: scroll;
+        height:100%;
+    }
+}
+
 @media (max-width: 480px) {
     body {
-        overflow: auto;
-        padding-bottom: 5%;
+        overflow: scroll;
+        height:100%;
     }
   }
