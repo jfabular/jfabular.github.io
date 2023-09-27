@@ -6,7 +6,7 @@ body{
     display: flex;
     justify-content: center;
     height: 100vh;  /* 100% of the viewport height */
-    overflow: hidden;
+    overflow: auto;
 }
 
 .intro {
