@@ -30,7 +30,6 @@ p + ul {
 }
 
 #cloud-container {
-    opacity: 50%;
     width: 100%;
     height: auto;
     margin-top: 50px;
