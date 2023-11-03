@@ -2,45 +2,91 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="hello! i'm jaron.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaron">
     <title>Jaron Fabular</title>
-    <link rel="icon" href="images/frog2.png" type="image/png">
+    <link rel="icon" href="assets/frog2.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <div id="cloud-container">
-        <object id="clouds" type="image/svg+xml" data="images/clouds.svg"></object>
-    </div>
-    <div class="intro">
-        <img src="images/froghop.gif" alt="frog hopping" class="frog-gif">
-        <p>hello! i'm jaron.</p>
-        <p>i'm currently making reading tools at <a href="https://hq.getmatter.com/" target="_blank">matter.</a></p>
-        <p>most things i know i learned on the internet. 
-            you can get surprisingly far with tutorials, downloading books, and asking for help.</p>
-        <p>from time to time i write <a href="https://wayhome.substack.com/" target="_blank">on my blog.</a> i try to post once a week. recently it has been... less frequent than that.</p>
-        <p>in the past i:</p>
-        <ul>
-            <li>obsessed over elder scrolls lore and read <a href="https://www.imperial-library.info/books/tes5%3Askyrim/by-category" target="_blank">every book in skyrim</a></li>
-            <li>amassed a questionable number (1,600) of spotify playlists</li>
-            <li>played competitive pokemon. one of my favorite sites is <a href="https://www.smogon.com/dex/sv/pokemon/" target="_blank">a pokedex</a></li>
-            <li>shot film for a fashion magazine, helped raise $100k for a nonprofit tackling drug abuse, led a feature at coinbase used by lots of people</li>
-            <li>????</li>
-        </ul>
-        <p>these days you can find me:</p>
-        <ul>
-            <li>reading books + collecting writing across the web</li>
-            <li>playing games like earthbound. or league of legends</li>
-            <li>making music (soundcloud wip)</li>
-        </ul>
-        <p>recent media i love:</p>
-        <ul>
-            <li>the tatami galaxy</li>
-            <li>cormac mccarthy's the road</li>
-            <li><a href="https://www.muzzlemagazine.com/angie-sijun-lou.html" target="_blank">this poem</a> by angie sijun lou</li>
-        </ul>
-        <p>thanks for stopping by :-]</p>
-        <p>feel free to <a href="mailto:jaronfabular@gmail.com" target="_blank">email me</a> or <a href="https://twitter.com/jjjjaron" target="_blank">dm on twitter</a></p>
-    </div>
+   <div id="textbox" class="animate__animated animate__fadeInUp">
+        <span id="textbox-content"></span>
+        <!-- <p id="text-content"></p> -->
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/p5@vv1.4.0/lib/p5.js" type="text/javascript"></script>
+   <script id="moonlight">
+    const HORIZON_Y = 400;
+    const DRAWING_SIZE = 800;
+    const MARGIN = 0;
+    const NUM_STARS = 150;
+    const MOON_X = 600;
+    const MOON_Y = 100;
+    const MOON_SIZE = 75;
+
+    let stars = [];
+
+
+    function setup() {
+        createCanvas(windowWidth + 20, windowHeight);
+        stroke(255);
+        noFill(); 
+        for (let i = 0; i < NUM_STARS; i++) {
+            stars.push(createVector(random(width), random(MARGIN, HORIZON_Y + MARGIN)));
+        }
+    }
+
+    function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+        stars = [];
+        for (let i = 0; i < NUM_STARS; i++) {
+            stars.push(createVector(random(width), random(MARGIN, windowHeight/2)));
+        }
+    }
+
+    function draw() {
+    background(20);
+    
+    // Draw Horizon
+    strokeWeight(0.3);
+    stroke(50);
+    line(MARGIN, windowHeight/2 + MARGIN, width - MARGIN, windowHeight/2 + MARGIN);
+    strokeWeight(1);
+    
+    // Draw Stars
+    stars.forEach(star => {
+        let addX =  cos(map(star.y + millis()/10, windowHeight/2, height - MARGIN, 0, TWO_PI*4)) * map(star.y, windowHeight/2, height - MARGIN, 0, 0);
+        let addY =  1 + sin(map(star.y + millis()/50, windowHeight/2, height - windowHeight/2.5, 20, TWO_PI*4)) * map(star.y, windowHeight/2, height - MARGIN, 3, 30);
+        stroke(160);
+        circle(star.x, star.y, 0.5);
+        stroke(80);
+        circle(star.x + addX, height - star.y + addY, 0.5);
+    });
+    
+    // Draw Moon
+    stroke(180);
+    fill(180);
+    circle(MOON_X, MOON_Y, MOON_SIZE);
+    stroke(40);
+    fill(40);
+    beginShape();
+    for (let i = 0; i < TWO_PI; i += TWO_PI/360) {
+        let x = MOON_X + sin(i) * MOON_SIZE/2;
+        let y = MOON_Y + cos(i) * MOON_SIZE/2;
+        let addX =  cos(map(y + millis()/10, windowHeight/2, height - MARGIN, 0, TWO_PI*4)) * map(y, windowHeight/2, height - MARGIN, 0, 0);
+        let addY =  1 + sin(map(y + millis()/50, windowHeight/2, height - windowHeight/2.5, 20, TWO_PI*4)) * map(y, windowHeight/2, height - MARGIN, 3, 30);
+        vertex(x + addX, height - y + addY);
+    }
+    endShape(CLOSE);
+    }
+</script>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script src="script.js"></script>
+<script>
+    var typed = new Typed('#textbox-content', {
+      strings: ['^1000Finally, ^1000 a moment of rest.'],
+      typeSpeed: 35,
+      showCursor: false,
+    });
+</script>
 </body>
 </html>
