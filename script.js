@@ -1,10 +1,12 @@
 const textbox = document.getElementById('textbox');
 const soundToggle = document.getElementById('sound-toggle');
 const soundIcon = document.getElementById('sound-icon');
+const avi = document.getElementById('avi-container');
 
 
 function animateOnClick() {
   textbox.classList.add('animate__animated', 'animate__fadeOutDown');
+  avi.classList.add('animate__animated', 'animate__fadeOut');
 }
 
 // toggle sound
@@ -25,10 +27,11 @@ function toggleSound() {
 
 // add listener to textbox
 textbox.addEventListener('click', animateOnClick);
+// avi.addEventListener('click', animateOnClick);
 
 // initialize sound object
 var sound = new Howl({
-  src: ['assets/ryuichiopening.mp3'],
+  src: ['assets/ryuichidream.mp3'],
   autoplay: true,
   loop: true,
   volume: 0.5,

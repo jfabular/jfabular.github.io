@@ -29,6 +29,17 @@ body{
     z-index: 1000;
 }
 
+#avi-container {
+    position: fixed;
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 2;
+    margin-bottom: 10%;
+}
+
+#avi {
+    animation: aviHover 2s ease-in-out infinite;
+}
+
 #textbox {
     position: fixed;
     width: 400px;
@@ -58,6 +69,15 @@ body{
     visibility: hidden;
 }
 
+@keyframes aviHover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    }
+
 @keyframes hoverEffect {
     0%, 100% {
         transform: translateY(0);
@@ -79,4 +99,8 @@ body{
 
 .animate__animated.animate__fadeOutDown {
     --animate-duration: 1.15s;
+}
+
+.animate__animated.animate__fadeIn {
+    --animate-duration: 3s;
 }

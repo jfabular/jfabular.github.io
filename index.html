@@ -9,10 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 </head>
-<div id="sound-toggle" class="sound-control">
-    <img src="assets/Off.svg" id="sound-icon" alt="Sound Toggle">
-</div>
 <body>
+    <div id="sound-toggle" class="sound-control">
+        <img src="assets/Off.svg" id="sound-icon" alt="Sound Toggle">
+    </div>
+    <div id="avi-container">
+        <div id="avi" class="animate__animated animate__fadeIn">
+            <img src="assets/banda.svg" alt="bunny">
+        </div>
+    </div>
    <div id="textbox" class="animate__animated animate__fadeInUp">
         <span id="textbox-content"></span>
         <img id="marker" src="assets/marker.svg" alt="marker">
@@ -87,7 +92,7 @@
 <script src="script.js"></script>
 <script>
     var typed = new Typed('#textbox-content', {
-      strings: ['^1000Finally, ^1000 a moment of rest.'],
+      strings: ['^1000Oh, ^1000there you are.'],
       typeSpeed: 35,
       showCursor: false,
     });
