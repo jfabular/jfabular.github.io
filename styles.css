@@ -41,6 +41,29 @@ body{
     cursor: pointer;
 }
 
+#textbox #marker {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    animation: hoverEffect 0.9s ease-in-out infinite, appear 0.001s linear 4s forwards;
+    visibility: hidden;
+}
+
+@keyframes hoverEffect {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    }
+
+@keyframes appear {
+    to {
+      visibility: visible;
+    }
+  }
+
 .animate__animated.animate__fadeInUp {
     --animate-duration: 1.15s;
   }

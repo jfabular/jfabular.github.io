@@ -6,11 +6,6 @@
   function animateOnClick() {
     // Add the animation classes
     this.classList.add('animate__animated', 'animate__fadeOutDown');
-
-    // // Optional: Remove the animation classes after the animation ends
-    // this.addEventListener('animationend', () => {
-    //   this.classList.remove('animate__animated', 'animate__fadeOutDown');
-    // });
   }
 
   // Add the click event listener to the div
