@@ -1,17 +1,32 @@
-
-// Select the element you want to click
 const textbox = document.getElementById('textbox');
+const soundToggle = document.getElementById('sound-toggle');
+const soundIcon = document.getElementById('sound-icon');
 
-// Define the function that adds the animation classes
+
 function animateOnClick() {
-  // Add the animation classes
-  this.classList.add('animate__animated', 'animate__fadeOutDown');
+  textbox.classList.add('animate__animated', 'animate__fadeOutDown');
 }
 
-// Add the click event listener to the div
+// toggle sound
+function toggleSound() {
+  if (sound.mute()) {
+    sound.mute(false);
+    soundIcon.src = 'assets/On.svg';
+  } else {
+    sound.mute(true);
+    soundIcon.src = 'assets/Off.svg';
+  }
+
+  // resume audiocontext on gesture
+  if (Howler.ctx.state === 'suspended') {
+    Howler.ctx.resume();
+  }
+}
+
+// add listener to textbox
 textbox.addEventListener('click', animateOnClick);
 
-
+// initialize sound object
 var sound = new Howl({
   src: ['assets/ryuichiopening.mp3'],
   autoplay: true,
@@ -20,14 +35,7 @@ var sound = new Howl({
   mute: true
 });
 
-document.getElementById('sound-toggle').addEventListener('click', function() {
-  var soundIcon = document.getElementById('sound-icon');
-  
-  if (sound.mute()) {
-    sound.mute(false);
-    soundIcon.src = 'assets/On.svg';
-  } else {
-    sound.mute(true);
-    soundIcon.src = 'assets/Off.svg';
-  }
+// add click event listener to the sound toggle div
+soundToggle.addEventListener('click', function() {
+  toggleSound();
 });
