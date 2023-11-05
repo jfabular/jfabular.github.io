@@ -21,10 +21,19 @@ body{
     z-index: -1;
 }
 
+.sound-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
 #textbox {
     position: fixed;
     width: 400px;
     height: 100px;
+    margin-top: 12.5%;
     padding: 10px;
     padding-left: 30px;
     padding-top: 25px;
