@@ -65,7 +65,7 @@ body{
     position: absolute;
     right: 20px;
     bottom: 20px;
-    animation: hoverEffect 0.9s ease-in-out infinite, appear 0.001s linear 4s forwards;
+    animation: hoverEffect 0.9s ease-in-out infinite, appear 0.001s linear 25s forwards;
     visibility: hidden;
 }
 

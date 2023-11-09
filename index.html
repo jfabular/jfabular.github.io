@@ -40,7 +40,7 @@
         stroke(255);
         noFill(); 
         for (let i = 0; i < NUM_STARS; i++) {
-            stars.push(createVector(random(width), random(MARGIN, HORIZON_Y + MARGIN)));
+            stars.push(createVector(random(width), random(MARGIN, windowHeight/2 + MARGIN)));
         }
     }
 

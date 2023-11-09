@@ -3,11 +3,21 @@ const soundToggle = document.getElementById('sound-toggle');
 const soundIcon = document.getElementById('sound-icon');
 const avi = document.getElementById('avi-container');
 
+textbox.style.pointerEvents = 'none';
 
 function animateOnClick() {
   textbox.classList.add('animate__animated', 'animate__fadeOutDown');
   avi.classList.add('animate__animated', 'animate__fadeOut');
 }
+
+// delay before able to click
+function allowTextboxClick() {
+  textbox.style.pointerEvents = 'auto';
+
+  textbox.addEventListener('click', animateOnClick);
+}
+
+setTimeout(allowTextboxClick, 25000);
 
 // toggle sound
 function toggleSound() {
