@@ -8,6 +8,13 @@ textbox.style.pointerEvents = 'none';
 function animateOnClick() {
   textbox.classList.add('animate__animated', 'animate__fadeOutDown');
   avi.classList.add('animate__animated', 'animate__fadeOut');
+
+  // listen for the end of the animation
+  this.addEventListener('animationend', () => {
+    // after the animation ends, change the cursor and disable pointer events
+    this.style.cursor = 'default';
+    this.style.pointerEvents = 'none';
+  });
 }
 
 // delay before able to click
@@ -34,10 +41,6 @@ function toggleSound() {
     Howler.ctx.resume();
   }
 }
-
-// add listener to textbox
-textbox.addEventListener('click', animateOnClick);
-// avi.addEventListener('click', animateOnClick);
 
 // initialize sound object
 var sound = new Howl({
