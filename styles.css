@@ -69,6 +69,46 @@ body{
     visibility: hidden;
 }
 
+@media (max-width: 575.98px) { 
+    #avi-container {
+        margin-bottom: 15%;
+    }
+
+    #textbox {
+        margin-top: 40%;
+    }
+  }
+
+@media (max-width: 767px) {
+    #avi-container {
+        margin-bottom: 15%;
+    }
+
+    #textbox {
+        margin-top: 30%;
+    }
+}
+
+@media (min-width: 768px) {
+    #avi-container {
+        margin-bottom: 15%;
+    }
+
+    #textbox {
+        margin-top: 20%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #avi-container {
+        margin-bottom: 10%;
+    }
+
+    #textbox {
+        margin-top: 12.5%;
+    }
+}
+
 @keyframes aviHover {
     0%, 100% {
         transform: translateY(0);
@@ -76,7 +116,7 @@ body{
     50% {
         transform: translateY(-10px);
     }
-    }
+}
 
 @keyframes hoverEffect {
     0%, 100% {
@@ -85,17 +125,17 @@ body{
     50% {
         transform: translateY(-5px);
     }
-    }
+}
 
 @keyframes appear {
     to {
       visibility: visible;
     }
-  }
+}
 
 .animate__animated.animate__fadeInUp {
     --animate-duration: 1.15s;
-  }
+}
 
 .animate__animated.animate__fadeOutDown {
     --animate-duration: 1.15s;
